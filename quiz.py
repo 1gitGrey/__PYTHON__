@@ -104,6 +104,8 @@ def hard_logic():
 		score = score - 1
 		index = index + 1
 	return score
+	return index
+	print score 
 def medium_logic():
 	index = 0
 	score = 0
@@ -122,6 +124,8 @@ def medium_logic():
 		index = index + 1
 		print randYay()
 	return score
+	return index
+	print score 
 def easy_logic():
 	index, score = 0
 	while userResponse != trueAnswer:
@@ -131,6 +135,8 @@ def easy_logic():
 		score = score + 1 
 	 	index = index + 1
 	return score
+	return inde
+	print score 
 
 for question, trueAnswer in quiz_data:
 		userResponse = raw_input(question)
@@ -141,5 +147,4 @@ for question, trueAnswer in quiz_data:
 		else:
 			hard_logic()
 
-if index == 15:
 	evaluate_score(score)
