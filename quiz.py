@@ -147,4 +147,3 @@ for question, trueAnswer in quiz_data:
 		else:
 			hard_logic()
 
-	evaluate_score(score)
