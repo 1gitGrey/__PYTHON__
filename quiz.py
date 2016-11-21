@@ -1,22 +1,27 @@
 #encoding=utf-8
 # :=:> module imports
 import sys, os, time, random
+from colorama import init, Fore, Back, Style
+from termcolor import colored
 
+#termcolor 
+init(autoreset=True)
 # name, time, and level selection
-print "\n" * 3 + "Program initialized: " + time.ctime() + "  " + '...' + ("\n" * 3)
-print "Ahem, Hi!"
+print (Fore.YELLOW + "\n" * 3 + "Program initialized: " + time.ctime() + "  " + '...' + ("\n" * 3))
+print (Fore.CYAN + "Ahem, Hi!")
 #.   user input field
-user_name = raw_input("\n\nWhat is your name?\n\n\n")
+user_name = raw_input(Fore.CYAN + "\n\nWhat is your name?\n\n\n")
 if len(user_name) == 0:
 	user_name = raw_input("\n\n\nWhat is your name? \n\nAnswer must be a string of at least 1 character" )
 
-print '\n' * 2 + 'Hi ' + user_name + "!!" + '\n' * 2 
+print (Fore.CYAN + '\n' * 2 + 'Hi ' + user_name + "!!" + '\n' * 2 )
 # user input field 
-level = raw_input("\nChoose level of difficulty: \n--a, easiest to c, most difficult\n\t If you need extra information type \'help\' ")
+level = raw_input(Fore.GREEN + "\nChoose level of difficulty:" + Fore.RESET + Fore.MAGENTA + "\n--a, easiest to c, most difficult\n\t If you need extra information type \'help\' ")
 if level == 'help' or level == 'Help':
 	print "(a) -- Quiz that can only end if a 100% score. Question repeats until correct answer is provided.\n"
 	print "(b) -- Quiz that allows two wrong attempts. If user leaves 2nd attempt blank there is no penalty for incorrect answer.\n"
 	print "(c) -- Quiz which subtracts 1 point for each wrong response. No second attempts allowed.\n"
+
 quiz_data = [
 
 
