@@ -18,9 +18,11 @@ print (Fore.CYAN + '\n' * 2 + 'Hi ' + user_name + "!!" + '\n' * 2 )
 # user input field 
 level = raw_input(Fore.GREEN + "\nChoose level of difficulty:" + Fore.RESET + Fore.MAGENTA + "\n--a, easiest to c, most difficult\n\t If you need extra information type \'help\' ")
 if level == 'help' or level == 'Help':
-	print "(a) -- Quiz that can only end if a 100% score. Question repeats until correct answer is provided.\n"
-	print "(b) -- Quiz that allows two wrong attempts. If user leaves 2nd attempt blank there is no penalty for incorrect answer.\n"
-	print "(c) -- Quiz which subtracts 1 point for each wrong response. No second attempts allowed.\n"
+	print (Fore.GREEN + "(a) -- Quiz that can only end if a 100% score. Question repeats until correct answer is provided.\n")
+	print (Fore.YELLOW + "(b) -- Quiz that allows two wrong attempts. If user leaves 2nd attempt blank there is no penalty for incorrect answer.\n")
+	print (Fore.RED + "(c) -- Quiz which subtracts 1 point for each wrong response. No second attempts allowed.\n")
+	level = raw_input(Fore.GREEN + "\nChoose level of difficulty:" + Fore.RESET + Fore.MAGENTA + "\n--a, easiest to c, most difficult\n\t If you need extra information type \'help\' ")
+
 
 quiz_data = [
 
@@ -79,6 +81,14 @@ def randNay():
 high_level = 'Wow! Congrats! You are well on your way to programming great structures, apps, and apis. Good word! '
 med_level =  'You surely are on the way to the top. Please focus more on crucial details that will prevent your code from being as great as it could be. Try harder!'
 low_level = 'Do not pass go, do not collect $200, go study'
+
+def evaluate_score(score):
+	if score <= 11:
+		print high_level
+	elif 7 < score < 10: 
+		print med_level
+	else: 
+		print low_level
 '''
 '''
 def hard_logic():
@@ -131,4 +141,5 @@ for question, trueAnswer in quiz_data:
 		else:
 			hard_logic()
 
-		evaluate_score(score)
+if index == 15:
+	evaluate_score(score)
